@@ -1,1 +1,20 @@
 # video-speed-up
+
+## 几个重要的概念
+
+- Manifest
+    > 项目清单文件 **manifest.json**，包含了 `版本、权限、页面...` 等配置信息，[详细信息](https://developer.chrome.com/extensions/manifest)
+- Background Script
+    > 后台执行脚本，所有扩展页面中 **生命周期最长** 的，从启动扩展到关闭扩展整个过程。  
+    因此常放置 `全局` 的 **逻辑处理**，及 `全局` 的 **事件监听处理**
+- Content scripts
+    > 网页交互脚本，主要功能是能够在当前网页上下文(context)中，操作 **DOM**，并且可以与扩展通信
+- Options Page
+    > 扩展选项页面，用于用户 **自定义选项**，**扩展详情** 等
+- Chrome APIs
+    > 扩展可使用的底层API，用于操作浏览器行为
+
+## 参考文档
+
+- [中文简介](https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html)
+- [官方文档](https://developer.chrome.com/extensions)
