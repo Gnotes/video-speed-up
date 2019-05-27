@@ -10,11 +10,22 @@ chrome.runtime.onInstalled.addListener(function () {
     // chrome.declarativeContent API 可以直接根据当前页面内容，并匹配配置的规则（rule）进行一些操作 action，需要注册 "declarativeContent" 权限
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
         chrome.declarativeContent.onPageChanged.addRules([{
-            conditions: [new chrome.declarativeContent.PageStateMatcher({
-                pageUrl: { hostEquals: 'developer.chrome.com' },
-            })
+            conditions: [
+                new chrome.declarativeContent.PageStateMatcher({
+                    pageUrl: { hostEquals: 'developer.chrome.com' },
+                })
             ],
             actions: [new chrome.declarativeContent.ShowPageAction()]
         }]);
+    });
+
+    chrome.contextMenus.onClicked.addListener(function () {
+        console.log('点击了右键菜单')
+    })
+    chrome.contextMenus.create({
+        "id": "contextmenu",
+        "title": "右键菜单",
+    }, function () {
+        console.log('右键菜单更新...')
     });
 });

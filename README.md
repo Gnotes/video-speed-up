@@ -18,3 +18,4 @@
 
 - [中文简介](https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html)
 - [官方文档](https://developer.chrome.com/extensions)
+- [Chrome 扩展及应用开发（首发版）](http://www.ituring.com.cn/book/1421)
