@@ -1,0 +1,45 @@
+{
+    "manifest_version": 2,
+    "name": "Video Speed Up",
+    "version": "0.1",
+    "description": "Chrome extension for HTML5 video speed rate control.",
+    "permissions": [
+        "declarativeContent",
+        "activeTab",
+        "tabs"
+    ],
+    "icons": {
+        "16": "images/v_16px.png",
+        "32": "images/v_32px.png",
+        "48": "images/v_48px.png",
+        "128": "images/v_128px.png"
+    },
+    "options_page": "views/options.html",
+    "page_action": {
+        "default_popup": "views/popup.html",
+        "default_icon": {
+            "16": "images/v_16px.png",
+            "32": "images/v_32px.png",
+            "48": "images/v_48px.png",
+            "128": "images/v_128px.png"
+        }
+    },
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "run_at": "document_start",
+            "js": [
+                "js/content.js"
+            ]
+        }
+    ],
+    "author": "xing.he"
+}

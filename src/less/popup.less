@@ -1,0 +1,85 @@
+.vsp-container {
+    background: #FFF;
+    width: 400px;
+    padding-bottom: 40px;
+
+    .header {
+        height: 50px;
+        line-height: 50px;
+        box-sizing: border-box;
+        box-shadow: 0 0px 10px 0px #ccc;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+
+        .logo {
+            span{
+                font-size: 16px;
+                color: #999;
+                font-family: cursive;
+            }
+
+            img {
+                width: 22px;
+                vertical-align: sub;
+            }
+        }
+
+        .menus {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            box-sizing: border-box;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+
+            &:hover{
+                cursor: pointer;
+                background-color: rgba(226, 217, 217, 0.5);
+
+                &::after {
+                    border-left-color: #1296db;
+                }
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                height: 16px;
+                border-left: 4px dotted;
+                border-left-color: #4990b663;
+                left: 50%;
+                top: 50%;
+                transform: translate(-2px,-8px);
+            }
+        }
+    }
+
+    .content ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 10px;
+
+        li {
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 8px 20px;
+            background-color: rgba(226, 217, 217, 0.5);
+            text-align: center;
+            font-size: 12px;
+            border-radius: 2px;
+            color: #ccccd2;
+            position: relative;
+            cursor: pointer;
+
+            &.active {
+                background-color: #1296db;
+                color: #FFF;
+            }
+        }
+    }
+}
