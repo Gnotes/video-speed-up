@@ -14,6 +14,20 @@
 - Chrome APIs
     > 扩展可使用的底层API，用于操作浏览器行为
 
+## 启动项目
+
+- 编译项目
+
+    ```bash
+    npm install
+
+    npm run build
+    ```
+
+- 引用项目
+
+> 在 `chrome://extensions/` 中，打开 `开发者模式`，点击 `加载已解压的扩展程序`，选择编译之后的目录 `lib` 即可.
+
 ## 参考文档
 
 - [中文简介](https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html)
