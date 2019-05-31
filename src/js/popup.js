@@ -39,7 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     menusEle.addEventListener('click', () => {
-        console.log("menusEle")
+        chrome.tabs.create({
+            url: chrome.extension.getURL('views/options.html'),
+            active: true,
+        });
     });
 
     optionsEle.addEventListener('click', (e) => {
