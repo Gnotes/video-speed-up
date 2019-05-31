@@ -5,12 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const menusEle = document.querySelector('.menus');
     const optionsEle = document.querySelector('.speed-rate-options');
     const liEles = optionsEle ? optionsEle.querySelectorAll('li') : [];
-    const NOTIFICATION_OPTIONS_ID = "NOTIFICATION_OPTIONS_ID"
+    const NOTIFICATION_OPTIONS_ID = "NOTIFICATION_OPTIONS_ID";
+    const PLAYBACK_RATE_STROAGE_KEY = "PLAYBACK_RATE_STROAGE_KEY";
     const updateClass = (value) => {
         liEles.forEach((li) => {
             li.className = li.innerText === value ? "active" : '';
         });
     }
+
+    const init = () => {
+        chrome.storage.sync.get([PLAYBACK_RATE_STROAGE_KEY], function (storage) {
+            if (storage[PLAYBACK_RATE_STROAGE_KEY]) {
+                updateClass(storage[PLAYBACK_RATE_STROAGE_KEY]);
+            }
+        });
+    }
+
+    init();
 
     const showNotification = (value, success) => {
         chrome.notifications.getPermissionLevel((level) => {
@@ -49,7 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
              */
             chrome.tabs.sendMessage(tabs[0].id, { type: "CHANGE_PLAY_RATE", value: parseFloat(value) }, (response = {}) => {
                 const { status, success } = response;
-                if (status) { showNotification(value, success); }
+                if (status) {
+                    success && chrome.storage.sync.set({ [PLAYBACK_RATE_STROAGE_KEY]: value });
+                    showNotification(value, success);
+                }
             });
         });
     });

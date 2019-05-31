@@ -60,7 +60,8 @@
     .content ul {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: flex-start;
+        flex-wrap: wrap;
         margin: 10px;
 
         li {
@@ -74,6 +75,7 @@
             color: #ccccd2;
             position: relative;
             cursor: pointer;
+            margin: 3px;
 
             &.active {
                 background-color: #1296db;
