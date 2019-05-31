@@ -7,7 +7,9 @@ function vsc_update_play_rate(value) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    chrome.runtime.onMessage.addListener((message, callback) => {
+    // TMD 拷贝的示例就俩参数，在详细文档中有三个参数
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+        sendResponse({ success: true })
         if (message.type == "CHANGE_PLAY_RATE") {
             vsc_update_play_rate(message.value);
         }
