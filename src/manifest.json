@@ -6,7 +6,8 @@
     "permissions": [
         "declarativeContent",
         "activeTab",
-        "tabs"
+        "tabs",
+        "notifications"
     ],
     "icons": {
         "16": "images/v_16px.png",
