@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Video Speed Up",
-    "version": "0.1",
-    "description": "Chrome extension for HTML5 video speed rate control.",
+    "version": "0.1.0",
+    "description": "Chrome extension for HTML5 video playback rate control.",
     "permissions": [
         "declarativeContent",
         "activeTab",
@@ -43,5 +43,6 @@
             ]
         }
     ],
-    "author": "xing.he"
+    "author": "xing.he",
+    "homepage_url": "https://github.com/Gnotes/video-speed-up"
 }
